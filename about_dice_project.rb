@@ -1,5 +1,23 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
+class DiceSet
+
+  def roll(x)
+    initialize
+    @y = []
+    x.times do
+      @y << (1..6).to_a.sample(1)
+    end
+    @y.flatten!
+  end
+
+  def values
+    initialize
+    v = []
+    v = @y
+  end
+
+end
 # Implement a DiceSet Class here:
 #
 # class DiceSet
