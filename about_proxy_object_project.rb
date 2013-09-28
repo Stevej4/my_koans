@@ -12,7 +12,35 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # missing handler and any other supporting methods.  The specification
 # of the Proxy class is given in the AboutProxyObjectProject koan.
 
+#______________________________________________________________________
+# #   # WRITE CODE HERE
+#    def initialize(target_object)
+#     @object = target_object
+# #     @messages = []
+#   end
+
+#   def method_missing(method, *args, &block)
+#     # @messages << method
+#     @object.__send__(method, *args, &block)
+#   end
+# end
+
+#   def messages
+#     @messages
+#   end
+
+#   def called?(method)
+#     @messages.include?(method)
+#   end
+
+#   def number_of_times_called(method)
+#     @messages.count(method)
+#   end
+# end
+#_______________________________________________________________________
+
 class Proxy
+<<<<<<< HEAD
   def initialize(target_object, *args)
     @object = target_object
     x = (target_object.to_s) + (args.join.to_s)
@@ -21,12 +49,32 @@ class Proxy
   
     # ADD MORE CODE HERE
     
+=======
+  attr_accessor :messages
+
+  def initialize(target_object)
+    @object = target_object
+    @messages = []   
+  end
+
+  def method_missing(method, *args, &block)
+    @messages << method
+    @object.__send__(method, *args, &block)
+  end
+
+  def called?(method)
+    @messages.include?(method)
+  end
+
+  def number_of_times_called(method)
+    @messages.count(method)
+>>>>>>> 18f30e2a910bc9df73fbc3774040993163d83f42
   end
  
   
 
-  # WRITE CODE HERE
 end
+
 
 # The proxy object should pass the following Koan:
 #
