@@ -42,8 +42,6 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 class Proxy
   attr_accessor :messages
 
-
-
   def initialize(target_object)
     @object = target_object
     @messages = []   
@@ -53,10 +51,6 @@ class Proxy
     @messages << method
     @object.__send__(method, *args, &block)
   end
-
-  # def messages
-  #   @messages
-  # end
 
   def called?(method)
     @messages.include?(method)
