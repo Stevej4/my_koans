@@ -13,10 +13,17 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # of the Proxy class is given in the AboutProxyObjectProject koan.
 
 class Proxy
-  def initialize(target_object)
+  def initialize(target_object, *args)
     @object = target_object
+    x = (target_object.to_s) + (args.join.to_s)
+    x
+
+  
     # ADD MORE CODE HERE
+    
   end
+ 
+  
 
   # WRITE CODE HERE
 end
