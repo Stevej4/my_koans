@@ -40,16 +40,7 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 #_______________________________________________________________________
 
 class Proxy
-<<<<<<< HEAD
-  def initialize(target_object, *args)
-    @object = target_object
-    x = (target_object.to_s) + (args.join.to_s)
-    x
 
-  
-    # ADD MORE CODE HERE
-    
-=======
   attr_accessor :messages
 
   def initialize(target_object)
@@ -68,7 +59,6 @@ class Proxy
 
   def number_of_times_called(method)
     @messages.count(method)
->>>>>>> 18f30e2a910bc9df73fbc3774040993163d83f42
   end
  
   
